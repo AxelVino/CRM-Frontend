@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+}
+
+.regist {
+    border: 2px solid rgb(165, 165, 165);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    width: 500px;
+    border-radius: 40px;
+    padding-bottom: 1%;
+}
+
+.regist h1 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.regist img {
+    padding-top: 1%;
+    border-radius: 50%;
+    height: 300px;
+}
+
+.regist form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    padding: 10%;
+    width: 60%;
+    border: 1px solid #b1aaa4;
+    background-color: #f9f0e9;
+}
+
+.regist input {
+    border-radius: 5px;
+}
+
+.regist .btn {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.regist .btn:hover {
+    background-color: #ececec;
+}
+
+.regist .btnB {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.regist a {
+    text-decoration: none;
+}
+
+.regist .btnB:hover {
+    background-color: #ececec;
+}
+
+.regist .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+    padding-top: 20px;
+}
