@@ -1,75 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
-* {
-    box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-}
-
 .regist {
-    border: 2px solid rgb(165, 165, 165);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: rgb(228, 228, 228);
+    text-align: center;
+    border-radius: 5px;
     width: 500px;
-    border-radius: 40px;
-    padding-bottom: 1%;
+    height: 550px;
+    background-color: rgb(236, 223, 206);
+    color: white;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+
 }
 
-.regist h1 {
+.regist .formRegist h4 {
+    color: black;
+    font-weight: bold;
     font-size: 30px;
-    font-weight: 800;
+    margin: 20px;
 }
 
-.regist img {
-    padding-top: 1%;
-    border-radius: 50%;
-    height: 300px;
-}
-
-.regist form {
+.regist .formRegist {
     display: flex;
     flex-direction: column;
-    border-radius: 6px;
-    padding: 10%;
-    width: 60%;
-    border: 1px solid #b1aaa4;
-    background-color: #f9f0e9;
+    width: 250px;
+    background-color: antiquewhite;
+    padding: 1rem;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+    height: 550px;
 }
 
-.regist input {
-    border-radius: 5px;
-}
-
-.regist .btn {
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-.regist .btn:hover {
-    background-color: #ececec;
-}
-
-.regist .btnB {
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-.regist a {
-    text-decoration: none;
-}
-
-.regist .btnB:hover {
-    background-color: #ececec;
-}
-
-.regist .container {
-    display: flex;
-    flex-direction: row;
+.regist .formRegist .controls {
     width: 100%;
-    height: 100%;
-    padding-left: 25px;
-    padding-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid rgb(236, 223, 206);
+    margin-bottom: 20px;
+}
+
+.errorMsgNew {
+    display: flex;
+    visibility: hidden;
+    font-size: 15px;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.errorVisibleNew {
+    display: flex;
+    visibility: visible;
+    margin-top: -19px;
+    margin-bottom: 0;
+}
+
+.regist .btnCreateRegist {
+    color: black;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(236, 223, 206);
+    border: none;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.regist .btnCreateRegist:hover {
+    background-color: rgb(233, 214, 189);
+}
+
+.regist .popUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.regist .popUp {
+    width: 300px;
+    /* Ajusta el tamaño según necesites */
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.regist .popUp button {
+    color: black;
+    width: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(236, 223, 206);
+    border: none;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin: 16px 0;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.regist .popUp button:hover {
+    background-color: rgb(233, 214, 189);
+}
+
+.regist .popUp p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.regist .popUp::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    /* Oscurece el fondo */
+}
+
+@media (max-width: 500px) {
+    .regist {
+        width: 350px;
+    }
+}
+
+@media (max-width: 400px) {
+    .regist {
+        width: 250px;
+    }
+}
+
+@media (max-width: 300px) {
+    .regist {
+        width: 200px;
+    }
 }

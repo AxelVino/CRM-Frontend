@@ -10,10 +10,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/StylesCRM.css">
-    <link rel="stylesheet" href="styles/StylesCRMSingUp.css">
-    <link rel="stylesheet" href="styles/StylesCRMContact.css">
-    <link rel="stylesheet" href="styles/StylesCRMProjects.css">
     <title>Crm Service</title>
 </head>
 <body>
@@ -24,43 +22,44 @@
             </a>
             <h1>Customer Cat Relationship Management</h1>
         </div>
-        <nav>
+        <nav class ="nav-sections">
             <ul class = "nav-links">
                 <li><a href="#/projects" class="project" id="projects">Projects</a></li>
-                <li><a href="#/contacuss">Contact</a></li>
+                <li><a href="#/contacuss" class="navContact">Contact</a></li>
                 <li><a href="#/aboutus">About us</a></li>
             </ul>
+            <div class ="divLogin">
+                <ul class = "in-up">
+                    <li class ="userName" id="iduser"></li>
+                    <li><button id="logoutBtn" class="btnLogout">Log out</button></li>
+                    <li><button id="openModal" class ="openModal">Sing in</button></li>
+                    <li><a href="#/singUp" id="createAccount" class="create">Create account</a></li>
+                </ul>
+            </div>
         </nav>
-        <div>
-            <ul class = "in-up">
-                <li class ="userName" id="iduser">default</li>
-                <li><a href="#/Home" class="btn"><button id="openModal">Sing In</button></a></li>
-                <li><a href="#/singUpForm" class="create" id="create">Create account</a></li>
-            </ul>
-        </div>
     </header>
-    <section id="root" class ="rootSection">
-        <section class ="whatisCRM">
-            <article class ="CRM">   
-                <h2>¿What is a CRM?</h2>
-                <p class ="explainCRM"> 
-                    CRM stands for Customer Relationship Management and refers to a set of practices,
-                    business strategies, and technologies focused on customer relationships.<br/>
-                    By using a CRM system,
-                    businesses of all sizes can stay connected with customers,
-                    optimize processes, improve profitability, and drive business growth.
-                </p>
-                <div class="try">
-                    <a href="#/singUpForm" class="btnTry"><button id="btnJoin">¡Join us!</button></a>
-                    <figure class="group">
+    <main id="root" class ="rootSection">
+        <section class ="boxSection">
+            <article class ="crmArticle">
+                <div class ="crmArticleDescription">
+                    <h2 class ="crmArticleTitle">¿What is a CRM?</h2>
+                    <p> CRM stands for Customer Relationship Management and refers to a set of practices,
+                        business strategies, and technologies focused on customer relationships.
+                        By using a CRM system,
+                        businesses of all sizes can stay connected with customers,
+                        optimize processes, improve profitability, and drive business growth.
+                    </p>
+                </div>   
+                <div class="crmImage">
+                    <figure class="crmDetails">
                         <img src="/imgs/pngegg1.png" alt="bunisess">
                         <figcaption><a href="https://www.pngegg.com/es" title="informacion de iconos">Image provided by pngegg</a></figcaption>
                     </figure>
                 </div>
             </article>
-            <article class ="whatdoes">
-                <div>
-                    <h2>¿What does a CRM do?</h2>
+            <article class ="crmArticleTwo">
+                <div class ="crmArticleDescriptionTwo">
+                    <h2 class ="crmArticleTitleTwo">¿What does a CRM do?</h2>
                     <p>The CRM stores information about current and potential customers (such as name, address, phone number, etc.) and
                         tracks their activities and points of contact with the company. This includes customer visits to the website,
                         phone calls made, email exchanges, and various other interactions.<br />
@@ -68,54 +67,52 @@
                         and integrates valuable data to prepare and update your teams with personal customer information, their purchase history, and their preferences.
                     </p>
                 </div>
-                <figure class="stadistics">
-                    <img src="/imgs/estadisticas.png" alt="profit">
-                    <figcaption><a href="https://www.flaticon.es/iconos-gratis/informacion" title="información iconos">Image provided by ultimatearm - Flaticon</a></figcaption>
-                </figure>
+                <div class="crmImageTwo">
+                    <figure class="crmDetailsTwo">
+                        <img src="/imgs/estadisticas.png" alt="profit">
+                        <figcaption><a href="https://www.flaticon.es/iconos-gratis/informacion" title="información iconos">Image provided by ultimatearm - Flaticon</a></figcaption>
+                    </figure>
+                </div>
             </article>
         </section>
-    </section>
+    </main>
     <footer role="contentinfo" class="nav-footer">
+        <nav class="nav-footer-navigation">
+            <ul class="nav-footer-navigation__menu">
+                <li>
+                    <a href ="#/work" class="nav-footer-navigation__link">Work with us</a>
+                </li>
+                <li>
+                    <a href ="#/term" class="nav-footer-navigation__link">Terms and conditions</a>
+                </li>
+                <li>
+                    <a href ="#/privacy" class="nav-footer-navigation__link">How we take care of your privacy</a>
+                </li>
+                <li>
+                    <a href ="#/accessibility" class="nav-footer-navigation__link">Accessibility</a>
+                </li>
+                <li>
+                    <a href ="#/help" class="nav-footer-navigation__link">Help</a>
+                </li>
+                <li>
+                    <a href ="#/consumerprotection" class="nav-footer-navigation__link">Consumer protection</a>
+                </li>
+            </ul>
+        </nav>
         <section class="nav-footer-user-info-nav-bounds">
-            <div class="nav-footer-info-wrapper">
-                <div class="nav-footer-primaryinfo">
-                    <nav class="nav-footer-navigation">
-                        <ul class="nav-footer-navigation__menu">
-                            <li>
-                                <a href ="#/work" class="nav-footer-navigation__link">Work with us</a>
-                            </li>
-                            <li>
-                                <a href ="#/term" class="nav-footer-navigation__link">terms and conditions</a>
-                            </li>
-                            <li>
-                                <a href ="#/privacy" class="nav-footer-navigation__link">How we take care of your privacy</a>
-                            </li>
-                            <li>
-                                <a href ="#/accessibility" class="nav-footer-navigation__link">Accessibility</a>
-                            </li>
-                            <li>
-                                <a href ="#/help" class="nav-footer-navigation__link">Help</a>
-                            </li>
-                            <li>
-                                <a href ="#/consumerprotection" class="nav-footer-navigation__link">Consumer protection</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <small class="nav-footer-copyright">Copyright ©&nbsp;2023-2024 CatRM S.R.L.</small>
-                    <small class="nav-footer-copyright">Av. siempreviva 123, Piso 1, CP 1881, Quilmes, CABA</small>
-                </div>
-            </div>
+                <small>Copyright ©&nbsp;2023-2024 </small>
+                <small>CatRM S.R.L.</small>
         </section>
     </footer>
-    <div id="ModalUser" class="modal">
-        <div class="modal-content">
+    <div id="modalOverlay" class = "modalOverlay">
+        <div class="modalRoot" id="modalRoot">
             <div>
-                <div></div>
                 <span class="close">&times;</span>
             </div>
             <div class="modal-form">
-                <label for="id">ID</label>
-                <input type="number" id="id" name="id" required placeholder="Ej:1,2,3,4..."><br>
+                <label for="id" class ="iDuser">ID</label>
+                <input type="number" id="id" name="id" required placeholder="Ej:1,2,3,4...">
+                <p class ="errorMsg" id="errorMsg"></p>
                 <input type="submit" id ="modalBtn" class="btnModal" value="Accept">
             </div>
         </div>

@@ -1,90 +1,93 @@
+import { loadScript } from "../loadScript.js";
+import { loadStyle } from "../loadStyle.js";
 export default () => {
     const views = `
-    <section class = "projectSection">
         <div class = "projectDiv">
-            <div class="filters">
+            <div class="divHead">
                 <div class="divFilters">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="ej: SpaceX"></input>
+                    <label for="nameInput">Name</label>
+                    <input type="text" id="nameInput" placeholder="ej: SpaceX">
+                    <span id = "errorMsg" class = "errorMsg"></span>
+                    <label for="campaignOption">Campaign</label>
+                    <select id="campaignOption" class= "campaignOption">
+                        <option value="">Select an option</option>
+                        <option value="1">SEO</option>
+                        <option value="2">PPC</option>
+                        <option value="3">Social Media</option>
+                        <option value="4">Email Marketing</option>
+                    </select>
+                    <input type="submit" id ="SearchBtn" class="SearchBtn" value="Search project">
                 </div>
-                <div class="divFilters">
-                    <label for="number">Campaign:</label>
-                    <input type="number" id="campaign" placeholder="ej: 1,2,3"></input>
-                </div>
-                <div class="divFilters">
-                    <label for="number">Offset:</label>
-                    <input type="number" id="offset" placeholder="ej: 10"></input>
-                </div>
-                <div class="divFilters">
-                    <label for="number">Size:</label>
-                    <input type="number" id="size" placeholder="ej: 20"></input>
-                </div>
-                <div>
-                <a href="#" class="btnSearch">
-                    <button>Search</button>
-                </a>
+                <div class="divCat">
+                    <img src="/imgs/CuteCat.png" alt="cute">
                 </div>
             </div>
             <div class="projectList">
-                <ul class = "projectVar">
-                    <li>name</li>
-                    <li>Campaign type</li>
-                </ul>
-                <ul class = "listProjects">
-
-        </ul>
+                <span class = "projectVar">Projects</span>
+                <div class="orderDiv">
+                    <div class="projectItems">
+                        <span class ="listName">Name</span>
+                        <ul id="nameList" class = "itemList">
+                            <li>.</li>
+                            <li>.</li>      
+                            <li>.</li>      
+                            <li>.</li>      
+                            <li>.</li>      
+                            <li>.</li>      
+                            <li>.</li>      
+                            <li>.</li>
+                            <li>.</li>
+                            <li>.</li>      
+                        </ul>
+                    </div>
+                    <div class="projectItems">
+                        <span class ="listCampaign">Campaign type</span>
+                        <ul id="campaignList" class = "itemList">
+                            <li></li>
+                            <li></li>
+                            <li></li> 
+                            <li></li> 
+                            <li></li> 
+                            <li></li> 
+                            <li></li> 
+                            <li></li> 
+                            <li></li> 
+                            <li></li> 
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div>
-                <a href="#" class="btnBack">
-                    <button>Back</button>
-                </a>
-                <a href="#" class="btnCreate">
-                    <button>Create Project</button>
-                </a>
-                <a href="#" class="btnNext">
-                    <button>Next</button>
-                </a>
+            <div class ="bottomButtoms">
+                <button id="createProject" class ="createProject">Create project</button>
+                <button id="prevButton" class="prevButton">Back</button>
+                <button id="nextButton" class="nextButton">Next</button>
             </div>
         </div>
-        <div class ="dinamicDiv"> 
-            <div  class="projectName">
-                <h2>Project name</h2>
-            </div>
-            <div>
-                <p>Guid:</p>
-                <p>Create Date:</p>
-                <p>Start date:</p>
-                <p>Update date:</p>
-                <p>End date:</p>
+        <div class ="dinamicDiv" id ="dinamicDiv"> 
+            <div class ="dinamicData">
+                <h3 id="Name" class ="tittleProject"></h3>
+                <dl class ="dinamicDate">
+                    <dt>Start</dt>
+                    <dd id="Start"></dd>
+                    <dt>End</dt>
+                    <dd id="End"></dd>
+                </dl>
             </div>
             <div class ="buttonsConteiner">
-                <a href="#" class="btn">
-                    <button>Task</button>
-                </a>
-                <a href="#" class="btn">
-                    <button>Interactions</button>
-                </a>
+                <button id="btnTasks">Task</button>
+                <button id="btnInteractions">Interactions</button>
             </div>
-            <div class="contentView">
-                <p></p>
-            </div>
+            <ul class="contentView" id="contentView">
+            </ul>
             <div class="dinamicDivBtn">
-                <a href="#" class="btnCreate">
-                    <button>Add interaction</button>
-                </a>
-                <a href="#" class="btnCreate">
-                    <button>Add task</button>
-                </a>
-                <a href="#" class="btnCreate">
-                    <button>Search task</button>
-                </a>
+                <button class="btnAddTask" id="btnAddTask">Add task</button>
+                <button class="btnAddInteraction" id="btnAddInteraction">Add interaction</button>
             </div>
-        </div>
-    </section>`;
-    const sectionElement = document.createElement('section');
+        </div>`;
+    const sectionElement = document.createElement('Section');
+    sectionElement.setAttribute("class", "boxSectionTwo");
     sectionElement.innerHTML = views;
+    loadScript('/logic/projectsLogic.js');
+    loadStyle('/styles/StylesCRMProjects.css');
     return sectionElement;
 };
-import { selectedClient } from "/logic/main.js";
-
-

@@ -1,181 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
+}
+
+html {
+    height: 100%;
 }
 
 body {
-    background-color: #FFF;
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 300;
+    /* Medium */
+    font-size: 20px;
+    background-color: white;
+    min-height: 100%;
     height: 100%;
-    margin: 0px;
-}
-
-.rootSection {
-    margin: 5%;
+    margin: 0;
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 500;
+}
+
 .header {
-    position: sticky;
-    background-color: #c2b5aa;
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
     align-items: center;
-    flex-direction: row;
-    min-height: 5vh;
-    height: 120px;
-    padding: 10px 2%;
-    border-bottom: 2px solid #b8a99e;
-    top: 0;
-    z-index: 1000;
+    justify-content: flex-start;
+    background-color: antiquewhite;
+    text-align: center;
+    border-bottom: 2px solid rgb(236, 223, 206);
+    min-width: 100%;
+    gap: 1rem;
 }
 
 .header .logo {
     margin-right: auto;
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0rem 1rem;
 }
 
 .header .logo img {
     cursor: pointer;
-    height: 100px;
-    width: auto;
-    transition: all 0.4s;
+    height: 5rem;
     object-fit: cover;
-    border-radius: 60%;
+    border: none;
+    background: antiquewhite;
+    padding: 0;
+    margin: 0;
 }
 
 .header .logo h1 {
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
 }
 
-.header .logo img:hover {
-    transform: scale(1.1);
-}
-
-.header .nav-links {
-    list-style: none;
+.header .nav-sections {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.header .nav-links li {
-    padding: 0 20px;
-    transition: all 0.4s;
+.header .nav-sections .nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0rem 1rem;
+    gap: 1rem;
 }
 
-.header .nav-links .project {
+.header .nav-sections .nav-links .project {
     display: none;
 }
 
-.header .nav-links li:hover {
-    transform: scale(1.1);
-}
-
-.header .nav-links a {
-    font-size: 700;
+.header .nav-sections .nav-links a {
     color: #000;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-.header .nav-links li a:hover {
-    color: #FFFFFF;
+.header .nav-sections .nav-links li a:hover {
+    color: #414941;
 }
 
-.header .btn button {
-    font-weight: 700;
-    color: #000;
-    padding: 9px 25px;
-    background: #FFF;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.4 ease 0ms;
-}
-
-.header .btn button:hover {
-    background: #f0efef;
-}
-
-
-.header .in-up {
+.header .nav-sections .divLogin .in-up {
     list-style: none;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-left: 20px;
+    text-align: center;
+    padding: 1rem 1rem;
 }
 
 
-.header .in-up .btn,
-.create {
-    flex: 1;
+.header .in-up .openModal {
     margin: 8px 0;
-    transition: all 0.4s ease 0s;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #FFFFFF;
-    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header .in-up .openModal:hover {
+    background-color: whitesmoke;
 }
 
 .header .in-up .userName {
-    display: none
+    display: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
 }
 
 .header .create {
     font-size: 20px;
-    color: #000;
+    color: black;
+    cursor: pointer;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 .header .in-up .create:hover {
-    transform: scale(1.1);
+    color: #414941;
 }
 
 .header .in-up li a:hover {
-    color: #FFFFFF;
+    color: #414941;
 }
 
-.header .in-up .userName {
-    font-size: 40px;
-    color: #000;
-    text-decoration: none;
-    border-radius: 8px;
-    padding-top: 4px;
+.errorMsg {
+    display: none;
+    color: red;
+}
+
+.errorVisible {
+    display: block;
+}
+
+.header .divLogin .in-up .btnLogout {
+    display: none;
+    margin: 8px 0;
+    color: black;
+    background-color: white;
+    border: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header .divLogin .in-up .btnLogout:hover {
+    background-color: whitesmoke;
 }
 
 .nav-footer {
     color: #999;
-    background-color: #FFF;
-    font-weight: 400;
-    line-height: 1;
-    overflow: hidden;
-    border-top: 1px solid #b3b0ae;
-    margin-bottom: 15px;
+    background-color: antiquewhite;
+    border-top: 2px solid rgb(236, 223, 206);
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
 }
 
 .nav-footer .nav-footer-navigation {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-footer .nav-footer-navigation li {
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: inline-block;
+.nav-footer .nav-footer-navigation .nav-footer-navigation__menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
 }
 
 .nav-footer .nav-footer-navigation li a {
@@ -183,151 +217,269 @@ body {
     color: #000;
 }
 
-.nav-footer .nav-footer-copyright {
+.nav-footer .nav-footer-user-info-nav-bounds {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
 }
 
-.whatisCRM {
+.rootSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.rootSection .boxSection {
     display: flex;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.rootSection .boxSection .crmArticle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     text-align: center;
-    min-height: 100vh;
 }
 
-.whatisCRM article {
-    margin-bottom: 5%;
+.rootSection .boxSection .crmArticle .crmArticleDescription p {
+    text-align: justify;
 }
 
-.whatisCRM h2 {
-    font-size: 50px;
-    font-weight: 700;
-    color: black
+.rootSection .boxSection .crmArticle .crmArticleTitle {
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-.whatisCRM .try .group {
-    margin-left: 35%;
-    margin-right: 35%;
-    border-bottom: 1px solid #b3b0ae;
-}
-
-.whatisCRM .try .group img {
-    width: 500px;
-    height: 400px;
-}
-
-.whatisCRM .try .btnTry button {
-    margin-top: 20px;
-    font-weight: 700;
-    color: #000;
-    padding: 9px 25px;
-    background: #c2b5aa;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.whatisCRM .try .btnTry button:hover {
-    background-color: #b8a99e;
-}
-
-.whatisCRM figure figcaption a {
-    font-weight: 400;
-    color: #999;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.whatisCRM .group img {
-    width: 500px;
-    height: 400px;
-}
-
-.whatisCRM .explainCRM {
-    padding-left: 20%;
-    padding-right: 20%;
-}
-
-.whatisCRM .stadistics {
-    border-bottom: 1px solid #b3b0ae;
-    margin-left: 10%;
-}
-
-.whatisCRM .whatdoes {
+.rootSection .boxSection .crmArticle .crmImage .crmDetails {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 5%;
-}
-
-.whatisCRM .whatdoes h2 {
-    display: flex;
-}
-
-.whatisCRM .whatdoes p {
-    text-align: left;
-    direction: ltr;
-}
-
-.rootSection .aboutUs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 5%;
-}
-
-.rootSection .aboutUs h2 {
-    display: flex;
-    font-size: 50px;
-    font-weight: 700;
-    color: black
-}
-
-.rootSection .aboutUs p {
-    text-align: left;
-    direction: ltr;
-}
-
-.rootSection .aboutUs .company {
-    border-bottom: 1px solid #b3b0ae;
-    margin-left: 10%;
-}
-
-.rootSection .aboutUs figure img {
-    width: 500px;
-    height: 400px;
-}
-
-.modal {
-    display: none;
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    height: max-content;
+}
+
+.rootSection .boxSection .crmArticle .crmImage .crmDetails img {
+    width: 30rem;
+    height: 20rem;
+}
+
+.rootSection .boxSection .crmArticle .crmImage .crmDetails figcaption a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: rgba(0, 151, 169, 255);
+    border-bottom: 1px solid green;
+}
+
+.rootSection .boxSection .crmArticleTwo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.rootSection .boxSection .crmArticleTwo .crmArticleDescriptionTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 60%;
+}
+
+.rootSection .boxSection .crmArticleTwo .crmArticleTitleTwo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.rootSection .boxSection .crmArticleTwo .crmImageTwo .crmDetailsTwo figcaption a {
+    text-decoration: none;
+    color: rgba(0, 151, 169, 255);
+    border-bottom: 1px solid green;
+}
+
+.rootSection .boxSection .crmArticleTwo .crmImageTwo .crmDetailsTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    height: max-content;
+}
+
+.rootSection .boxSection .crmArticleTwo .crmImageTwo .crmDetailsTwo img {
+    width: 30rem;
+    height: 20rem;
+}
+
+@media (max-width: 675px) {
+    img {
+        width: 100%;
+        /* Ajusta la imagen al 100% del contenedor */
+        max-width: 300px;
+        /* Limita el tamaño máximo */
+        height: 400px;
+        /* Mantiene la proporción */
+    }
+
+    figcaption a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 390px) {
+    img {
+        width: 100%;
+        /* Ajusta la imagen al 100% del contenedor */
+        max-width: 200px;
+        /* Limita el tamaño máximo */
+        max-height: 300px;
+        /* Mantiene la proporción */
+    }
+
+    figcaption a {
+        font-size: 10px;
+    }
+
+    .header .nav-sections {
+        gap: 50px
+    }
+
+    .header .nav-sections .nav-links {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .crmArticleDescriptionTwo {
+        min-width: 100%;
+    }
+
+    .crmArticleDescription {
+        min-width: 100%;
+    }
+
+    .header .nav-sections {
+        gap: 50px
+    }
+
+    .header .nav-sections .nav-links {
+        gap: 100px;
+    }
+
+    .header .nav-sections .nav-links .project {
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 675px) {
+
+    .header .nav-sections {
+        gap: 50px
+    }
+
+    .header .nav-sections .nav-links {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 530px) {
+
+    .header .nav-sections {
+        gap: 10px
+    }
+}
+
+@media (max-width: 240px) {
+
+    .header .nav-sections {
+        gap: 10px
+    }
+
+    .header .nav-sections .nav-links {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.modalOverlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(83, 83, 83, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
-.modal-content {
+.modalRoot {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: antiquewhite;
+    width: 250px;
+    border-radius: 20px;
+    padding: 0rem 1rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(218, 204, 186);
 }
 
-.modal .modal-content .modal-form {
+.modalOverlay .modalRoot .modal-form {
     display: flex;
     flex-direction: column;
     text-align: start;
-    padding: 10%;
-    padding-top: 0%;
+    margin: auto;
+}
+
+.modalOverlay .modalRoot .modal-form .iDuser {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.modalOverlay .modalRoot .modal-form input {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 2px solid rgb(236, 223, 206);
+}
+
+.modalOverlay .modalRoot .modal-form .btnModal {
+    color: black;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(236, 223, 206);
+    border: none;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin: 16px 0;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.modalOverlay .modalRoot .modal-form .btnModal:hover {
+    background-color: rgb(233, 214, 189);
 }
 
 .close {
@@ -337,6 +489,7 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: transform 0.3s ease-in-out;
 }
 
 .close:hover,
@@ -344,4 +497,58 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+    transform: scale(1.2);
+}
+
+.rootSection .boxSection .crmArticleThree {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.rootSection .boxSection .crmArticleThree .crmArticleDescriptionThree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 60%;
+}
+
+.rootSection .boxSection .crmArticleThree .crmArticleTitleThree {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.rootSection .boxSection .crmArticleThree .crmImageThree .crmDetailsThree figcaption a {
+    text-decoration: none;
+    color: rgba(0, 151, 169, 255);
+    border-bottom: 1px solid black;
+}
+
+.rootSection .boxSection .crmArticleThree .crmImageThree .crmDetailsThree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    height: max-content;
+}
+
+.rootSection .boxSection .crmArticleThree .crmImageThree .crmDetailsThree img {
+    width: 30rem;
+    height: 20rem;
+}
+
+.errorMsg {
+    display: none;
+    color: red;
+    font-size: 15px;
+}
+
+.errorVisible {
+    display: flex;
 }

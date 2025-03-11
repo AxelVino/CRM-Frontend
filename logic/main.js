@@ -1,90 +1,141 @@
 import { router } from '/logic/router/index.routes.js';
+import { EP_GETCLIENT } from '/logic/config.js';
+import { initializeRegist } from './singUp.js';
+import { initializeProjectWindow } from './projectsLogic.js';
+import SingUp from './views/ProjectModals/singUp.js';
 
-//modal logic
-//guardo los id en variables
-var selectedClient = null;
-const EP_GET = 'https://localhost:7012/api/v1/Client'
-var modal = document.getElementById("ModalUser");
-var btn = document.getElementById("openModal");
-var span = document.getElementsByClassName("close")[0];
-var inputElement = document.getElementById("id");
-var acceptBtn = document.getElementById("modalBtn");
+// Variables globales
+let selectedClient = null;
+let savedId = null;
+const modalOverlay = document.getElementById("modalOverlay");
+const btnOpenModal = document.getElementById("openModal");
+const btnCloseModal = document.getElementsByClassName("close")[0];
+const acceptBtn = document.getElementById("modalBtn");
+const projects = document.getElementById("projects");
+const username = document.getElementById("iduser");
+const create = document.getElementById("createAccount");
+const LogOut = document.getElementById("logoutBtn");
+const errorMsg = document.getElementById("errorMsg");
+let inputElement = document.getElementById("id");
 
-//Cuando el usuario realiza un click en el boton, cambia el display
+//Bloqueo caracteres especiales en el input de enteros
 
-btn.onclick = function () {
-    modal.style.display = "flex";
-}
-//Cuando el usuario realiza un click en cerrar, cambia el display
-
-span.onclick = function () {
-    modal.style.display = "none";
-}
-//Cuando el usuario hace un click fuera del nodal, vuelve a cambiar el display
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-// Agregar un event listener para el botón
-
-acceptBtn.addEventListener('click', function () {
-
-    //variable para verificar el valor en el input
-    let savedValue = parseInt(inputElement.value);
-
-    //verifico que se envie un valor valido
-    if (isNaN(savedValue)) {
-        console.log('Por favor, ingresa un ID válido');
-        return; // Sale de la función si el ID no es válido
-    }
-    else {
-        //instancio dentro de la funcion para no tener que cargarlo aunque no apreten
-        //el boton
-        var projects = document.getElementById("projects");
-        var create = document.getElementById("create");
-        var btnJoinUs = document.getElementById("btnJoin");
-        var username = document.getElementById("iduser");
-        var idusername = '';
-
-        //cada vez que hagan  click en el boton, hare la peticion get.
-        fetch(EP_GET)
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Error en la respuesta de la red');
-                }
-                return res.json();
-            })
-            .then(data => {
-                const client = data.find(user => user.id === savedValue)
-                if (client) {
-                    //guardo el cliente para usarlo despues
-                    selectedClient = client.id;
-
-                    //desactivo los visuales que ya no necesito y activo otros.
-                    selectedClient = client;
-                    idusername = client.name;
-                    modal.style.display = "none";
-                    projects.style.display = "flex";
-                    btn.style.display = "none";
-                    create.style.display = "none";
-                    btnJoinUs.style.display = "none";
-                    username.style.display = "flex";
-
-                    //muestro el nombre del usuario
-                    username.innerText = idusername;
-                }
-                else {
-                    console.log('No se encontró ningún cliente con el ID:', savedValue);
-                }
-            })
-            .catch(error => console.log('Error en la solicitud fetch:', error));
+document.getElementById("id").addEventListener("keydown", function (e) {
+    if (e.key === "-" || e.key === "." || e.key === "e" || e.key === ",") {
+        e.preventDefault(); // Bloquea el ingreso de negativos, decimales y notación científica
     }
 });
 
-//Utilizo la tecnica SPA para poder mostrar varias pantallas sin tener que cargar un nuevo html
-window.addEventListener('hashchange', () => {
-    router(window.location.hash)
-})
-export { selectedClient }
+// Función para mostrar el modal
+function showModal() {
+    modalOverlay.style.display = "flex";
+}
+
+// Función para ocultar el modal
+function hideModal() {
+    modalOverlay.style.display = "none";
+}
+
+// Manejo del evento click fuera del modal
+function handleOutsideClick(event) {
+    if (event.target === modalOverlay) {
+        hideModal();
+    }
+}
+
+// Función para manejar la selección del cliente
+async function handleAcceptClick() {
+    const savedValue = parseInt(inputElement.value);
+
+    if (isNaN(savedValue)) {
+        errorMsg.textContent = "Please enter an ID";
+        errorMsg.classList.add("errorVisible");
+        return;
+    }
+
+    try {
+        const response = await fetch(EP_GETCLIENT);
+        if (!response.ok) throw new Error('Error en la respuesta de la red');
+
+        const data = await response.json();
+        const client = data.find(user => user.id === savedValue);
+
+        if (client) {
+            selectedClient = client;
+            savedId = client.id;
+            window.location.hash = '#/Home'
+            // Actualiza la UI
+            updateUIForClient(client);
+        } else {
+            errorMsg.textContent = "Invalid ID";
+            errorMsg.classList.add("errorVisible");
+        }
+    } catch (error) {
+        console.error('Error en la solicitud fetch:', error);
+    }
+}
+
+function handleLogOutClick() {
+    username.textContent = '';
+    selectedClient = null;
+    savedId = null;
+    projects.style.display = "none";
+    btnOpenModal.style.display = "flex";
+    create.style.display = "flex";
+    username.style.display = "none";
+    LogOut.style.display = "none";
+    errorMsg.textContent = "";
+    inputElement.value = "";
+    window.location.hash = "#/Home";
+}
+
+// Función para actualizar la UI al seleccionar un cliente
+function updateUIForClient(client) {
+
+    // Mostrar el nombre del cliente
+
+    const { name } = client;
+    const lastName = name.split(" ")[1] || ""; // Obtiene la segunda parte o una cadena vacía si no existe
+
+    username.textContent = lastName;
+    // Ocultar/mostrar elementos
+    projects.style.display = "flex";
+    btnOpenModal.style.display = "none";
+    create.style.display = "none";
+    username.style.display = "flex";
+    LogOut.style.display = "flex";
+
+    hideModal();
+}
+
+// Eventos
+btnOpenModal.addEventListener("click", showModal);
+btnCloseModal.addEventListener("click", hideModal);
+window.addEventListener("click", handleOutsideClick);
+acceptBtn.addEventListener("click", handleAcceptClick);
+LogOut.addEventListener("click", handleLogOutClick);
+
+window.addEventListener("load", () => {
+    if (window.location.hash !== "#/Home") {
+        window.location.hash = "#/Home"; // Redirige a Home al cargar la página
+    }
+});
+
+window.addEventListener("hashchange", () => {
+    router(window.location.hash);
+    if (window.location.hash == '#/singUp') {
+        initializeRegist();
+    } else if (window.location.hash == '#/projects') {
+        initializeProjectWindow();
+    }
+
+});
+
+const modalPredem = () => {
+    const modalOverlay = document.getElementById("modalOverlay");
+    modalOverlay.innerHTML = '';
+    modalOverlay.appendChild(SingUp());
+};
+
+export { savedId };
+

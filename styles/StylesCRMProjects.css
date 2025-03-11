@@ -1,82 +1,162 @@
-.rootSection {
-    display: flex;
-    margin: 2%;
-}
-
-.rootSection .projectSection {
+.rootSection .boxSectionTwo {
     display: flex;
     flex-direction: row;
     flex: 1;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
 }
 
-.rootSection .projectSection .projectDiv {
+.rootSection .boxSectionTwo .projectDiv {
     background-color: antiquewhite;
-    border: 2px solid rgb(63, 63, 63);
+    border: 2px solid rgb(218, 204, 186);
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    margin: 0;
     width: 500px;
-    margin-right: 10px;
 }
 
-.rootSection .projectSection .projectDiv .filters {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    text-align: left;
-    margin: 0;
-    padding-bottom: 10%;
+.rootSection .boxSectionTwo .projectDiv .bottomButtoms {
+    display: inline-block;
 }
 
-.rootSection .projectSection .projectDiv .filters .divFilters {
-    flex: 1;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-}
-
-.rootSection .projectSection .projectDiv .projectList {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgb(192, 180, 164);
-    margin-bottom: 10px;
-}
-
-.rootSection .projectSection .projectDiv .projectList .projectVar {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-items: center;
+.rootSection .boxSectionTwo .projectDiv .bottomButtoms button {
+    cursor: pointer;
+    color: #000;
+    width: auto;
+    padding: 0px 5px;
+    margin-top: 5px;
+    height: 30px;
     font-size: 20px;
-    border: 1px solid rgb(192, 180, 164);
-    flex-direction: row;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 204, 186);
+    border-radius: 2px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-.rootSection .projectSection .projectDiv .projectList .projectVar li {
-    flex: 1;
-    text-align: justify;
-    border: 1px solid rgb(192, 180, 164);
-    height: 45;
-    background-color: rgb(209, 196, 178);
+.rootSection .boxSectionTwo .projectDiv .bottomButtoms button:hover {
+    color: #414941;
 }
 
+.rootSection .boxSectionTwo .projectDiv .bottomButtoms .prevButton {
+    display: inline-block;
+}
 
-.rootSection .projectSection .projectDiv .projectList .projects .projectsItems {
+.rootSection .boxSectionTwo .projectDiv .bottomButtoms .nextButton {
+    display: inline-block;
+}
+
+.rootSection .boxSectionTwo .projectDiv .divHead {
     display: flex;
     flex-direction: row;
+}
+
+.rootSection .boxSectionTwo .projectDiv .divFilters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+}
+
+.rootSection .boxSectionTwo .projectDiv .divFilters .campaignOption {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    border: 1px solid rgb(218, 204, 186);
+}
+
+.rootSection .boxSectionTwo .projectDiv .divFilters input {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    height: 30px;
+    font-size: 20px;
+    border: 1px solid rgb(218, 204, 186);
+}
+
+.rootSection .boxSectionTwo .projectDiv .divFilters .SearchBtn {
+    display: flex;
+    color: #000;
+    padding: 0px 5px;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 204, 186);
+    height: 30px;
+    font-size: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.rootSection .boxSectionTwo .projectDiv .divFilters .SearchBtn:hover {
+    color: #414941;
+}
+
+.rootSection .boxSectionTwo .projectDiv .projectList {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(218, 204, 186);
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: antiquewhite;
+}
+
+.rootSection .boxSectionTwo .projectDiv .projectList .projectVar {
+    font-weight: 500;
+}
+
+.rootSection .boxSectionTwo .projectDiv .projectList .orderDiv {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+
+.rootSection .boxSectionTwo .projectDiv .projectList .orderDiv .projectItems {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-top: 1px solid rgb(218, 204, 186);
+    background-color: white;
+}
+
+.rootSection .boxSectionTwo .projectDiv .projectList .orderDiv .projectItems .listName {
+    border-bottom: 1px solid rgb(218, 204, 186);
+    border-right: 1px solid rgb(218, 204, 186);
+    font-weight: 500;
+}
+
+.rootSection .boxSectionTwo .projectDiv .projectList .orderDiv .projectItems .listCampaign {
+    border-bottom: 1px solid rgb(218, 204, 186);
+    font-weight: 500;
+}
+
+
+.rootSection .boxSectionTwo .projectDiv .projectList .itemList {
+    text-align: justify;
+    height: 45;
     list-style: none;
+    margin-left: 2px;
+}
+
+
+.rootSection .boxSectionTwo .projectDiv .projectList .projects .projectsItems {
+    display: flex;
+    flex-direction: row;
     text-align: left;
     margin: 0px;
     padding-left: 0px;
 }
 
-.rootSection .projectSection .projectDiv .projectList .projects {
+.rootSection .boxSectionTwo .projectDiv .projectList .projects {
     text-decoration: none;
     color: black;
     border: 1px solid rgb(192, 180, 164);
 }
 
-.rootSection .projectSection .projectDiv .projectList .projects .projectsItems li {
+.rootSection .boxSectionTwo .projectDiv .projectList .projects .projectsItems li {
     flex: 1;
     text-align: left;
     font-size: 20px;
@@ -86,49 +166,195 @@
     align-items: center;
 }
 
-.rootSection .projectSection .projectDiv .projectList .projects .projectsItems li p {
+.rootSection .boxSectionTwo .projectDiv .projectList .projects .projectsItems li p {
     flex: 1;
-
 }
 
-.rootSection .projectSection .projectDiv .projectList .projects .projectsItems li:hover {
+.rootSection .boxSectionTwo .projectDiv .projectList .projects .projectsItems li:hover {
     background-color: rgb(221, 221, 221);
 }
 
-.rootSection .projectSection .dinamicDiv {
-    display: flex;
+.rootSection .boxSectionTwo .dinamicDiv {
+    display: none;
     flex-direction: column;
     background-color: antiquewhite;
-    border: 2px solid rgb(63, 63, 63);
-    padding: 10px;
+    border: 2px solid rgb(218, 204, 186);
+    padding: 20px;
     border-radius: 8px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    height: 565px;
     width: 500px;
+    margin: 0;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .dinamicData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .dinamicData .tittleProject {
+    font-size: 40px;
+    font-weight: 800;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
     margin-right: 10px;
 }
 
-.rootSection .projectSection .dinamicDiv .buttonsConteiner {
-    display: flex;
+.rootSection .boxSectionTwo .dinamicDiv .dinamicData .dinamicDate dt {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .dinamicData .dinamicDate {
+    border: 5px solid rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+.rootSection .boxSectionTwo .dinamicDiv .buttonsConteiner {
+    display: inline-block;
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.rootSection .projectSection .dinamicDiv .buttonsConteiner .btn {
+.rootSection .boxSectionTwo .dinamicDiv .buttonsConteiner .btn {
     margin-right: 10px;
 }
 
-.rootSection .projectSection .dinamicDiv .contentView {
+.rootSection .boxSectionTwo .dinamicDiv .contentView {
     background-color: white;
     flex: 1;
-    border-radius: 8px;
-    border: 2px solid black;
-    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(218, 204, 186);
+    margin-bottom: 5px;
+
+    max-height: 320px;
+    /* Ajusta la altura según sea necesario */
+    overflow-y: auto;
+    /* Agrega un scroll si el contenido es demasiado grande */
 }
 
-.rootSection .projectSection .dinamicDiv .dinamicDivBtn {
+.rootSection .boxSectionTwo .dinamicDiv .contentView ul {
+    list-style: none;
+    margin-left: 2px;
+    max-height: 200px;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .dinamicDivBtn {
+    display: inline-block;
+    gap: 20px
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .dinamicDivBtn button {
+    color: #000;
+    padding: 0px 5px;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 204, 186);
+    border-radius: 2px;
+    cursor: pointer;
+    width: auto;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    height: 30px;
+    font-size: 20px;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .dinamicDivBtn button:hover {
+    color: #414941;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .buttonsConteiner {
+    gap: 20px;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .buttonsConteiner button {
+    color: #000;
+    padding: 0px 5px;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 204, 186);
+    border-radius: 2px;
+    cursor: pointer;
+    width: auto;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    height: 30px;
+    font-size: 20px;
+}
+
+.rootSection .boxSectionTwo .dinamicDiv .buttonsConteiner button:hover {
+    color: #414941;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.divCat {
     display: flex;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-left: 40px;
 }
 
-.rootSection .projectSection .dinamicDiv .dinamicDivBtn button {
-    margin-right: 10px;
+.divCat img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 1050px) {
+    .rootSection .boxSectionTwo .projectDiv {
+        width: 400px;
+    }
+
+    .rootSection .boxSectionTwo .dinamicDiv {
+        width: 400px;
+    }
+}
+
+@media (max-width: 850px) {
+    .rootSection .boxSectionTwo {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .rootSection .boxSectionTwo .projectDiv {
+        width: 350px;
+    }
+
+    .rootSection .boxSectionTwo .dinamicDiv {
+        width: 350px;
+    }
+
+    img {
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .rootSection .boxSectionTwo .projectDiv {
+        width: 300px;
+    }
+
+    .rootSection .boxSectionTwo .dinamicDiv {
+        width: 300px;
+    }
+
+    img {
+        display: none;
+    }
 }

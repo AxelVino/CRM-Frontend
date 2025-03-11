@@ -1,0 +1,303 @@
+.modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(83, 83, 83, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.createModal {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(218, 204, 186);
+}
+
+.createModal .modal-CreateProject {
+    display: flex;
+    flex-direction: column;
+}
+
+.createModal .modal-CreateProject .modal-FormCreateProject {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 10px 10px;
+    font-weight: 500;
+}
+
+.createModal .modal-CreateProject .modal-FormCreateProject .campaignType {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(218, 204, 186);
+}
+
+
+
+
+.addTaskModal {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(218, 204, 186);
+}
+
+.modal-addTask {
+    display: flex;
+    flex-direction: column;
+}
+
+.addTaskModal .modal-addTask .modal-FormAddTask {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 10px 10px;
+    font-weight: 500;
+}
+
+.addTaskModal .modal-addTask .modal-FormAddTask select {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(218, 204, 186);
+}
+
+select {
+    height: 30px;
+    font-size: 20px;
+}
+
+input {
+    height: 30px;
+    font-size: 20px;
+}
+
+
+.addInteractionModal {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(218, 204, 186);
+}
+
+.modal-addInteraction {
+    display: flex;
+    flex-direction: column;
+}
+
+.addInteractionModal .modal-addInteraction .modal-FormAddInteracion {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 10px 10px;
+    font-weight: 500;
+}
+
+.addInteractionModal .modal-addInteraction .modal-FormAddInteracion select {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(218, 204, 186);
+}
+
+.closeModal {
+    position: relative;
+    right: 10px;
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.closeModal:hover {
+    transform: scale(1.2);
+}
+
+.modalTittle {
+    position: relative;
+    left: 10px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.acceptBtn {
+    cursor: pointer;
+    padding: 0px 5px;
+    margin-right: 50%;
+    margin-top: 25px;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 204, 186);
+    width: auto;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.acceptBtn:hover {
+    color: #414941;
+}
+
+.head-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+input {
+    border: 1px solid rgb(218, 204, 186);
+    border-radius: 4px;
+}
+
+.infoInteractionModal {
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(218, 204, 186);
+    padding: 10px 10px;
+    width: 300px;
+}
+
+.infoInteractionModal .modal-infoInteraction .head-modal .modalTittleI {
+    position: relative;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.infoInteractionModal .modal-infoInteraction .head-modal .closeModal {
+    position: relative;
+    left: 3px;
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-infoInteraction {
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    width: 300px;
+    max-width: 300px;
+    /* Ajusta el ancho del modal según necesites */
+    overflow: hidden;
+    /* Evita que el contenido se desborde */
+}
+
+.modal-DivInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-infoInteractionData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.infoInteractionModal .modal-DivInfo .modal-infoInteractionNote {
+    width: 100%;
+    height: 100%;
+}
+
+.interactNote {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    background-color: white;
+    width: 100%;
+    height: 180px;
+    border: 3px solid rgb(218, 204, 186);
+    max-height: 200px;
+    /* Ajusta la altura según sea necesario */
+    overflow-y: auto;
+    /* Agrega un scroll si el contenido es demasiado grande */
+
+}
+
+.infoTaskModal {
+    display: flex;
+    flex-direction: row;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    width: max-content;
+    padding: 10px 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(218, 204, 186);
+}
+
+.modal-infoTask {
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.modal-infoTaskConteiner {
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    padding: 10px 11px;
+}
+
+.modal-infoTaskConteiner .modal-infoTaskData dt {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal-infoTaskConteiner .modal-infoTaskData dd {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(218, 204, 186);
+    width: auto;
+}
+
+.modal-infoTaskData {
+    margin-right: 20px;
+}
+
+.modal-infoTaskData .acceptBtn {
+    cursor: pointer;
+    padding: 2px 10px;
+    margin-top: 25px;
+    font-size: 20px;
+    background-color: antiquewhite;
+    border: 1px solid rgb(218, 204, 186);
+    width: 50%;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+
+.modal-FormModify {
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.modal-FormModify select {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(218, 204, 186);
+}

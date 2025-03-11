@@ -1,25 +1,31 @@
+import { loadStyle } from "/logic/loadStyle.js";
+
 export default () => {
-    const views = `<section class ="regist">
-        <img src="/imgs/CATRM.png" alt="brand logo">
-        <h1>New account</h1>
-        <form class="form">
-            <label for="username">Name</label>
-            <input type="text" id="username" name="username" required placeholder="Ej: patricio"><br>
-            <label for="gmail">Email</label>
-            <input type="text" id="email" name="email" required placeholder="Ej: abcd@gmail.com"><br>
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company bunisess" required placeholder="Ej: lamnda s.a"><br>
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone number" required placeholder="Ej: 11-12345678"><br>
-            <label for="address">Adress</label>
-            <input type="text" id="adress" name="adress direction" required placeholder="Ej: Av. conan 2590"><br><br>
-            <input type="submit" class="btn" value="Create account">
+    const views =
+        `
+        <form class="formRegist" id="formRegist">
+            <h4>New account</h4>
+            <input type="text" id="userNameRegist" class="controls" required placeholder="Enter your name">
+            <span id = "errorNameRegist" class = "errorMsgNew"></span>
+            <input type="text" id="gmailRegist" class="controls" required placeholder="Enter your gmail">
+            <span id = "errorGmailRegist" class = "errorMsgNew"></span>
+            <input type="text" id="companyRegist" class="controls" required placeholder="Enter your company name">
+            <span id = "errorCompanyRegist" class = "errorMsgNew"></span>
+            <input type="text" id="phoneRegist" class="controls" required placeholder="Enter your phone number">
+            <span id = "errorPhoneRegist" class = "errorMsgNew"></span>
+            <input type="text" id="adressRegist" class="controls" required placeholder="Enter your adress">
+            <span id = "errorAddressRegist" class = "errorMsgNew"></span>
+            <input type="submit" class="btnCreateRegist" id="btnCreateRegist" value="Create">
         </form>
-        <div class="container">
-            <a href="#/Home"><button class="btnB">Back</button></a>
-        </div>
-    </section>`;
+        <dialog id="popUp" class="popUp">
+            <p>¡Account created!</p>
+            <button id="closePop" class="closePop">Close</button>
+        </dialog>
+        `;
     const sectionElement = document.createElement('section');
+    sectionElement.setAttribute("class", "regist");
+    sectionElement.setAttribute("id", "regist");
     sectionElement.innerHTML = views;
+    loadStyle("/styles/StylesCRMSingUp.css");
     return sectionElement;
 };

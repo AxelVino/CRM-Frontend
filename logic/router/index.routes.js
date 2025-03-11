@@ -1,5 +1,5 @@
 import Projects from '/logic/views/projects.js'
-import SingUp from '/logic/views/singUp.Js'
+import SingUp from '/logic/views/singUp.js'
 import Home from '/logic/views/home.js'
 import AboutUs from '/logic/views/aboutUs.js'
 import Contact from '/logic/views/contact.js'
@@ -10,12 +10,12 @@ import Help from '../views/help.js'
 import Work from '/logic/views/workWithUs.js'
 import Terms from '/logic/views/termsAndConditions.js'
 
-
 //Router, envia las funciones dependiendo del hipervinculo que aprete el usuario
 
 //Cada funcion tiene una  porcion de codigo html que pintara en  la  interfaz
 
 const content = document.getElementById('root');
+
 const router = (route) => {
     content.innerHTML = '';
     switch (route) {
@@ -25,7 +25,7 @@ const router = (route) => {
         case '#/projects': {
             return content.appendChild(Projects());
         }
-        case '#/singUpForm': {
+        case '#/singUp': {
             return content.appendChild(SingUp());
         }
         case '#/aboutus': {
