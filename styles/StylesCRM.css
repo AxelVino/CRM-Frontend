@@ -165,17 +165,18 @@ h6 {
 
 .header .divLogin .in-up .btnLogout {
     display: none;
-    margin: 8px 0;
-    color: black;
     background-color: white;
     border: none;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 15px;
-    font-weight: 700;
+    padding: 5px 5px;
     transition: background-color 0.3s ease-in-out;
+}
+
+.header .divLogin .in-up .btnLogout img {
+    width: 20px;
+    height: 20px;
 }
 
 .header .divLogin .in-up .btnLogout:hover {

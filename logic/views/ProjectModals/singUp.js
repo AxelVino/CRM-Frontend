@@ -1,6 +1,5 @@
 export default () => {
     const views = `
-    <div class="modalRoot" id="modalRoot">
             <div>
                 <span class="close">&times;</span>
             </div>

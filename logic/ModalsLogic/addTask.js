@@ -10,8 +10,6 @@ let errorDueDate = document.getElementById("errorMsgDueDate");
 
 const modalOverlay = document.getElementById("modalOverlay");
 
-// Construir la URL reemplazando {id} con el valor real de savedprojectId
-let url = EP_PATCHPROJECTTASK.replace('{id}', savedprojectId);
 
 document.body.addEventListener("click", async function (event) {
     if (event.target.id === "acceptNewTask") {
@@ -26,6 +24,9 @@ const handleInteraction = async () => {
     let dueDate = document.getElementById("taskDueDate");
     let taskUser = document.getElementById("taskUser");
     let taskStatus = document.getElementById("taskStatus");
+    // Construir la URL reemplazando {id} con el valor real de savedprojectId
+    let url = EP_PATCHPROJECTTASK.replace('{id}', savedprojectId);
+    console.log(savedprojectId + "id del proyecto");
     if (validator(name.value, dueDate)) {
 
         // Lógica del fetch

@@ -17,13 +17,14 @@
 <body>
     <header class = "header">
         <div class="logo">
-            <a href="#/Home"> 
+            <a href="#/home"> 
                 <img src="imgs/CATRM.png" alt="brand logo">
             </a>
             <h1>Customer Cat Relationship Management</h1>
         </div>
         <nav class ="nav-sections">
             <ul class = "nav-links">
+                <li><a href="#/home" class="home" id="home">Home</a></li>
                 <li><a href="#/projects" class="project" id="projects">Projects</a></li>
                 <li><a href="#/contacuss" class="navContact">Contact</a></li>
                 <li><a href="#/aboutus">About us</a></li>
@@ -31,7 +32,7 @@
             <div class ="divLogin">
                 <ul class = "in-up">
                     <li class ="userName" id="iduser"></li>
-                    <li><button id="logoutBtn" class="btnLogout">Log out</button></li>
+                    <li><button id="logoutBtn" class="btnLogout"><img src="/imgs/LogOut.png" alt="log out"></button></li>
                     <li><button id="openModal" class ="openModal">Sing in</button></li>
                     <li><a href="#/singUp" id="createAccount" class="create">Create account</a></li>
                 </ul>
@@ -105,17 +106,6 @@
         </section>
     </footer>
     <div id="modalOverlay" class = "modalOverlay">
-        <div class="modalRoot" id="modalRoot">
-            <div>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-form">
-                <label for="id" class ="iDuser">ID</label>
-                <input type="number" id="id" name="id" required placeholder="Ej:1,2,3,4...">
-                <p class ="errorMsg" id="errorMsg"></p>
-                <input type="submit" id ="modalBtn" class="btnModal" value="Accept">
-            </div>
-        </div>
     </div>
     <script type="module" src="/logic/main.js"></script>
 </body>

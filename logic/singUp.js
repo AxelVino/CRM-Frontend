@@ -15,7 +15,7 @@ const initializeRegist = () => {
     closePopUp.addEventListener("click", () => {
         popUp.close();
         form.reset();
-        window.location.hash = "#/Home";
+        window.location.hash = "#/home";
     });
 };
 

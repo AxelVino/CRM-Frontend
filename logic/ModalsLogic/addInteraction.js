@@ -7,9 +7,6 @@ import { savedEndProject } from "../projectsLogic.js";
 const modalOverlay = document.getElementById("modalOverlay");
 let errorDueDate = document.getElementById("errorMsgDueDate");
 
-// Construir la URL reemplazando {id} con el valor real de savedprojectId
-let url = EP_PATCHPROJECT.replace('{id}', savedprojectId);
-
 document.body.addEventListener("click", async function (event) {
     if (event.target.id === "acceptNewInteraction") {
         await handleInteraction();
@@ -22,6 +19,9 @@ const handleInteraction = async () => {
     let interactionType = document.getElementById("interactionType");
     let dateTime = document.getElementById("interactionDueDate");
     let notes = document.getElementById("interactionNotes");
+    // Construir la URL reemplazando {id} con el valor real de savedprojectId
+    let url = EP_PATCHPROJECT.replace('{id}', savedprojectId);
+    console.log(savedprojectId + "id del proyecto");
     if (validator(dateTime.value)) {
 
         errorDueDate.style.display = 'none';

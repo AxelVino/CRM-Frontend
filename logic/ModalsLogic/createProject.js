@@ -11,7 +11,6 @@ let errorMsgEDate = document.getElementById("errorMsgEDate");
 
 document.body.addEventListener("click", async function (event) {
     if (event.target.id === "acceptBtn") {
-        console.log("Se hace click");
         await handleInteraction();
     }
 });
@@ -67,19 +66,12 @@ const handleInteraction = async () => {
     });
 
     if (validator(inputProjectName, inputStartDate, inputEndDate, inputCampaignType)) {
-        console.log("Pasa el validador");
         // Obtengo los datos de los inputs
         let savedProjectName = inputProjectName.value;
         let savedStartDate = inputStartDate.value;
         let savedEndDate = inputEndDate.value;
         let savedCampaignType = inputCampaignType.value;
         let savedClientId = savedId;
-
-        console.log(savedProjectName + "nombre del projecto");
-        console.log(savedStartDate + "fecha de inicio");
-        console.log(savedEndDate + "fecha de fin");
-        console.log(savedCampaignType + "campaña");
-        console.log(savedClientId + "id");
 
         const requestData = {
             name: savedProjectName,
@@ -89,9 +81,7 @@ const handleInteraction = async () => {
             client: savedClientId
         };
         const data = await fetchData(url, requestData);
-        console.log("Realiza el fetch");
         if (data) {
-            console.log("Devuelve la info");
             modalOverlay.style.display = "none";
             cleanContainer();
         }

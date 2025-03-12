@@ -19,7 +19,7 @@ const content = document.getElementById('root');
 const router = (route) => {
     content.innerHTML = '';
     switch (route) {
-        case '#/Home': {
+        case '#/home': {
             return content.appendChild(Home());
         }
         case '#/projects': {
