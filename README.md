@@ -1,8 +1,19 @@
 # CRM-Frontend
 
-Buenas, esta es una pagina SPA utilizando javascript vanilla, la cual se comunica con un backend hecho en .Net. 
-La cree para aprender a manipular el DOM y aprender conceptos tanto practicos como teoricos.
+Un CRM es una herramienta que ayuda a las empresas a administrar y analizar sus interacciones con los clientes.
+Este proyecto posee un pequeño login (sin contraseña, ya que no se implemento un sistema de autenticacion con contraseña, tokens, etc) en cual puede utilizarse para acceder a los distintos usuarios. Tambien se cuenta con una pestaña de registro, para poder crear y almacenar nuevos usuarios.
+Al loguearse en un usuario (ingresando su ID), aparecera la pestaña proyectos, en donde se podran realizar distintas interacciones.
+Algunas de las interacciones son:
+*Crear proyectos.
+*Filtrar proyectos.
+*Añadir interacciones.
+*Añadir tareas.
+*Modificar tareas.
 
-Es un sitio web responsive, hace uso de FETCH para la comunicacion con el back, hace uso de un router que esta a la espera de los cambios de hash, esta modularizado (Para poder reutilizar la mayor parte del codigo y
-una mejor legibiliad). Se pueden crear usuarios, crear proyectos, buscar y filtrar mediante un paginado, crear tareas, interacciones, modificar tareas y navegar un poco entre las distintas visuales dinamicas. Ademas
-se valida tanto en el front como en el back los input, para una mejor seguridad y se modifico el head para un mejor posicionamiento SEO. 
+La finalidad de este proyecto Front, fue poder aprender con mas profundidad HTML, CSS y Javascript vanilla, para poder aprender conceptos claves como el DOM, sintaxis, maquetado, etc, entre otras utilidades para poder crear una Web App que solucione alguna necesidad y sea SPA.
+Elementos a destacar:
+- Fetch para realizar las solicitudes http al backend.
+- Flexbox + Media querys para que sea responsive.
+- Componentes reutilizables.
+- Router
+  
